@@ -1,0 +1,15 @@
+<automaton> ::= --nstates 1 <module> | --nstates 2 <state2> <state2> | --nstates 3 <state3> <state3> <state3> | --nstates 4 <state4> <state4> <state4> <state4>
+<module> ::= --sB 0 --rwmB <RW> | --sB 1 | --sB 2 | --sB 3 | --sB 4 --attB <AttRep> | --sB 5 --repB <AttRep>
+<state2> ::= <module> --nB 1 <ntrans2> <transition>
+<state3> ::= <module> --nB 1 <ntrans3> <transition> | <module> --nB 2 <ntrans3> <transition> <ntrans3> <transition>
+<state4> ::= <module> --nB 1 <ntrans4> <transition> | <module> --nB 2 <ntrans4> <transition> <ntrans4> <transition> | <module> --nB 3 <ntrans4> <transition> <ntrans4> <transition> <ntrans4> <transition>
+<ntrans2> ::= --nBxT 0
+<ntrans3> ::= --nBxT 0 | --nBxT 1
+<ntrans4> ::= --nBxT 0 | --nBxT 1 | --nBxT 2
+<transition> ::= --cBxT 0 --pBxT <P> | --cBxT 1 --pBxT <P> | --cBxT 2 --pBxT <P> | --cBxT 5 --pBxT <P> |--cBxT 3 --pBxT <B> --wBxT <W> | --cBxT 4 --pBxT <B> --wBxT <W>
+<RW> ::= <digit><digit>
+<AttRep> ::= 0.<digit><digit> | 1.<digit><digit> | 2.<digit><digit> | 3.<digit><digit> | 4.<digit><digit>
+<P> ::= 0.<digit><digit>
+<B> ::= 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
+<W> ::= <digit>.<digit><digit> | 1.<digit><digit>
+<digit> ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
